@@ -2,37 +2,37 @@
 
 This is a simple playbook to append Contrail SDN roles to an existing openshift-ansible deplopyer
 
-**For the current iteration, Please use the /home mount space to download the openshift-ansible code.** 
+~~**For the current iteration, Please use the /home mount space to download the openshift-ansible code.** ~~
 
 
 ### Steps to execute 
 
 **On the Openshift-ansible node**
 
-**Step 1: Change directory to /home**
-```
-cd /usr/share/ansible
-```
 
-**Step2: Download Openshift-ansible from your Openshift Repo**
+
+**Step1: Download Openshift-ansible from your Openshift Repo**
 
 ```
 eg:
-git clone https://github.com/openshift/openshift-ansible.git -b release-3.9
+sudo git clone https://github.com/openshift/openshift-ansible.git -b release-3.9
 ```
 
 
 **Step3: Clone the custom-openshift repo** 
 ```
-cd /usr/share/ansible
-
-git clone https://github.com/Juniper/custom-openshift.git
+sudo git clone https://github.com/Juniper/custom-openshift.git
 ```
 **Step4: Go to the playbook Directory and execute the playbook** 
 
 
 ```
-cd /usr/share/ansible/custom-openshift/ose/playbooks/
+cd custom-openshift/ose/playbooks/
+
+**command to run**
+
+
+ansible-playbook integrate.yaml -e src_directory={{path to openshift-ansible}} -e dst_directory={{path to download contrail-openshift-repo}}
 
 [root@ip-10-10-10-10 playbooks]# ansible-playbook integrate.yaml -e src_directory=/usr/share/ansible/openshift-ansible -e dst_directory=/tmp/test2/
  [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not
