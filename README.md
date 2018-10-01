@@ -93,7 +93,9 @@ contrail_registry=hub.juniper.net/contrail
 # Username /Password for private Docker registry
 #contrail_registry_username=test
 #contrail_registry_password=test
+#vrouter_gateway=10.10.10.1
 
-vrouter_gateway=10.10.10.1
-
+#**Add this contrail vars list**
+[contrail_masters]
+10.10.10.10 openshift_hostname=ip-10-10-10-10.us-west-1.compute.internal
 ```
