@@ -85,6 +85,7 @@ PLAY RECAP *********************************************************************
 **Step6 : Please append the contrail inventory variables to your openshift-asible inventory**
 ```
 openshift_use_openshift_sdn=false
+os_sdn_network_plugin_name='cni'
 openshift_use_contrail=true
 contrail_version=5.0
 contrail_container_tag=5.0.1-0.214
