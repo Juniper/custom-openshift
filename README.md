@@ -84,17 +84,59 @@ PLAY RECAP *********************************************************************
 
 **Step6 : Please append the contrail inventory variables to your openshift-asible inventory**
 ```
-openshift_use_openshift_sdn=false
-os_sdn_network_plugin_name='cni'
-openshift_use_contrail=true
-contrail_version=5.0
-contrail_container_tag=5.0.1-0.214
-contrail_registry_insecure=true
-contrail_registry=hub.juniper.net/contrail
-# Username /Password for private Docker registry
-#contrail_registry_username=test
-#contrail_registry_password=test
-#vrouter_gateway=10.10.10.1
+---
+openshift_use_openshift_sdn: False
+os_sdn_network_plugin_name: 'cni'
+nested_mode_contrail: False
+openshift_use_contrail: True
+contrail_version: 5.0
+contrail_container_tag: 5.0.2-0.360
+contrail_registry_insecure: True
+contrail_registry: hub.juniper.net/contrail
+contrail_registry_username: JNPR-FieldUser3
+contrail_registry_password: E6Ti-V_GhU0yH#umLanQ
+# Please provide the Kubernetes VIP or Load Balancer as a IP address 
+kubernetes_api_server: 10.10.10.246  
+service_subnets: 172.30.0.0/16
+
+# openshift_node_open_ports: [
+#   { "service":"contrail-config-api", "port":"8082/tcp" },
+#   { "service":"contrail-config-api-backend", "port":"9100/tcp" },
+#   { "service":"contrail-config-api-introspect", "port":"8084/tcp" },
+#   { "service":"contrail-web-ui", "port":"8143/tcp" },
+#   { "service":"contrail-web-ui-debug", "port":"8080/tcp" },
+#   { "service":"contrail-control-xmpp", "port":"5269/tcp" },
+#   { "service":"contrail-control-dns-xmpp", "port":"8093/tcp" },
+#   { "service":"contrail-control-introspect", "port":"8083/tcp" },
+#   { "service":"contrail-kubemanager-introspect", "port":"8108/tcp" },
+#   { "service":"contrail-vrouter-introspect", "port":"8085/tcp" },
+#   { "service":"contrail-control-introspect-dns", "port":"8092/tcp" },
+#   { "service":"contrail-analytics-collector", "port":"8086/tcp" },
+#   { "service":"contrail-schema-transformer-introspect", "port":"8087/tcp" },
+#   { "service":"contrail-analytics-api", "port":"8081/tcp" },
+#   { "service":"zookeeper", "port":"2181/tcp" },
+#   { "service":"zookeeper-analytics", "port":"2182/tcp" },
+#   { "service":"zookeeper-range", "port":"2888-3889/tcp" },
+#   { "service":"zookeeper-analytics-range", "port":"4888-5888/tcp" },
+#   { "service":"rabbitmq", "port":"5672/tcp" },
+#   { "service":"redis", "port":"6379/tcp" },
+#   { "service":"kafka", "port":"9092/tcp" },
+#   { "service":"cassandra9041", "port":"9041/tcp" },
+#   { "service":"cassandra9042", "port":"9042/tcp" },
+#   { "service":"cassandra9160", "port":"9160/tcp" },
+#   { "service":"cassandra9161", "port":"9161/tcp" },
+#   { "service":"cassandra7000", "port":"7000/tcp" },
+#   { "service":"cassandra7010", "port":"7010/tcp" },
+#   { "service":"cassandra7199", "port":"7199/tcp" },
+#   { "service":"cassandra7198", "port":"7198/tcp" },
+#   { "service":"ifmap", "port":"8443/tcp" },
+#   { "service":"rabbit-ha-port4369", "port":"4369/tcp" },
+#   { "service":"rabbit-ha-port25672", "port":"25672/tcp" },
+#   { "service":"contrail-vrouter-agent-introspect", "port":"8085/tcp" },
+#   { "service":"contrail-cni", "port":"9091/tcp" },
+#   { "service":"dns", "port":"53/tcp" }
+# ]
+
 
 #**Add this contrail vars list**
 [contrail_masters]
