@@ -92,3 +92,8 @@
       script: ../files/append_nodes.sh {{ src_directory }} 
       run_once: true
       become: yes
+
+    - name: "Execute the script for ntp update"
+      script: ../files/ntp_update.sh {{ src_directory }}
+      run_once: true
+      become: yes
