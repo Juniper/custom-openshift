@@ -93,10 +93,10 @@ contrail_version: 5.0
 contrail_container_tag: 5.0.2-0.360
 contrail_registry_insecure: True
 contrail_registry: hub.juniper.net/contrail
-contrail_registry_username: JNPR-FieldUser3
-contrail_registry_password: E6Ti-V_GhU0yH#umLanQ
-# Please provide the Kubernetes VIP or Load Balancer as a IP address 
-kubernetes_api_server: 10.10.10.246  
+contrail_registry_username: <change-me>
+contrail_registry_password: <change-me>
+# Please provide the Kubernetes VIP or Load Balancer as a IP address, Please not URL will not work.  
+kubernetes_api_server: <Openshift VIP IP addresss>  
 service_subnets: 172.30.0.0/16
 
 # openshift_node_open_ports: [
