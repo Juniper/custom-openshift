@@ -97,3 +97,8 @@
       script: ../files/ntp_update.sh {{ src_directory }}
       run_once: true
       become: yes
+
+    - name: "Execute the script for master update"
+      script: ../files/master_update.sh {{ src_directory }}
+      run_once: true
+      become: yes
