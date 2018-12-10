@@ -10,27 +10,27 @@
       become: yes
 
     - name: copy contrail_master into your openshift-ansible-deployer
-      command: cp -r {{dst_directory}}/roles/contrail_master {{src_directory}}/roles/.
+      command: cp -r ../files/contrail_master {{src_directory}}/roles/.
       become: yes
 
     - name: copy contrail_nodes folder into your openshift-ansible-deployer
-      command: cp -r {{dst_directory}}/roles/contrail_node {{src_directory}}/roles/.
+      command: cp -r ../files/contrail_node {{src_directory}}/roles/.
       become: yes
 
     - name: copy contrail_controller folder into your openshift-ansible-deployer
-      command: cp -r {{dst_directory}}/roles/contrail_controller {{src_directory}}/roles/.
+      command: cp -r ../files/contrail_controller {{src_directory}}/roles/.
       become: yes
 
     - name: copy contrail_controller folder into your openshift-ansible-deployer
-      command: cp -r {{dst_directory}}/roles/contrail_st {{src_directory}}/roles/.
+      command: cp -r ../files/contrail_st {{src_directory}}/roles/.
       become: yes
 
     - name: copy contrail_controller folder into your openshift-ansible-deployer
-      command: cp -r {{dst_directory}}/roles/contrail_web_console {{src_directory}}/roles/.
+      command: cp -r ../files/contrail_web_console {{src_directory}}/roles/.
       become: yes
 
     - name: copy contrail_common folder into your openshift-ansible-deployer
-      command: cp -r {{dst_directory}}/roles/contrail_common {{src_directory}}/roles/.
+      command: cp -r ../files/contrail_common {{src_directory}}/roles/.
       become: yes
 
     - name: Patch openshift node defaults main.yml file
